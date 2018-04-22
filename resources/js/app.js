@@ -138,6 +138,14 @@ var app = new Vue(
 				{
 					if (this.districts_grouped[district][data] !== new_data[district][data] && this.districts_grouped[district]['name'] === new_data[district]['name'])
 					{
+						if (new_data[district][data]['invasion_online'] === 'true' && new_data[district][data]['cogs_attacking'] !== this.districts_grouped[district][data]['cogs_attacking'] && hasPermissions)
+						{
+							var notification = new Notification('District Tracker',
+							{
+								body: `${new_data[district][data]['cogs_attacking']} have invaded ${new_data[district][data]['name']}!`,
+								icon: 'https://tracker.clash.lol/resources/img/icon.png'
+							})
+						}
 						this.districts_grouped[district][data] = new_data[district][data];
 					}
 				}
