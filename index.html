@@ -37,10 +37,12 @@
     <link rel="icon" href="https://tracker.clash.lol/resources/img/icon.png"/>
     <link rel="shortcut icon" href="https://tracker.clash.lol/resources/img/icon.png"/>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lumen/bulmaswatch.min.css"/>
 
     <link rel="stylesheet" href="./resources/css/style.css"/>
+    <link rel="stylesheet" href="./resources/css/font-awesome-animation.css">
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
@@ -60,7 +62,9 @@
 <section class="section">
     <div class="container">
         <h1 class="title">
-            District Tracker &#128270;
+            District Tracker <i class="fas fa-flip-horizontal fa-search"></i>
+	        <div class="pull-right" onclick="window.location.reload()" style="float: right;"><span class="tag is-success"><i class="fas fa-sync-alt"></i></span>
+</div>
         </h1>
         <hr>
 
@@ -100,10 +104,10 @@
                                 <span classs="level-right">
                                     <span v-if="district.cogs_attacking">
                                         <span v-if="district.cogs_attacking != 'None'">
-                                            <span class="tooltip" data-tooltip="Cogs are currently invading this district!">&#129302;</span>
+                                            <span class="tooltip" data-tooltip="Cogs are currently invading this district!"><i class="fa fa-warning faa-flash animated" style="color: #b62c28;"></i></span>
 										</span>
                                         <span v-else>
-                                            <span class="tooltip" data-tooltip="No cogs are invading this district at the moment!">&#128124;</span>
+                                            <span class="tooltip" data-tooltip="No cogs are invading this district at the moment!"><i class="fa fa-heart faa-pulse animated-hover" style="color: #28b62c;></i></span>
                                         </span>
                                     </span>
 								</span>
@@ -141,7 +145,14 @@
     </transition-group>
     </div>
 </section>
-
+<footer>
+	<div class="footer text-center py-3">
+		<a href="https://corporateclash.net/social/discord"><i class="fab fa-2x fa-discord" style="padding-left: 10px;"></i></a>
+		<a href="https://corporateclash.net/social/youtube"><i class="fab fa-2x fa-youtube" style="padding-left: 10px;"></i></a>
+		<a href="https://corporateclash.net/social/twitter" style="padding-left: 10px;"><i class="fab fa-2x fa-twitter"></i></a>
+		<a href="https://corporateclash.net/social/twitch"><i class="fab fa-2x fa-twitch" style="padding-left: 10px;"></i></a>
+	</div>
+</footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="./resources/js/app.js"></script>

@@ -69,7 +69,7 @@ function array_chunk(input, size, preserveKeys)
 	return n
 }
 // Notification permissions
-var hasPermisisons = false;
+var hasPermissions = false;
 
 function allowNotifications()
 {
@@ -81,7 +81,7 @@ function allowNotifications()
 	// Let's check whether notification permissions have already been granted
 	else if (Notification.permission === "granted")
 	{
-		hasPermisisons = true;
+		hasPermissions = true;
 	}
 	// Otherwise, we need to ask the user for permission
 	else if (Notification.permission !== 'denied')
@@ -91,7 +91,7 @@ function allowNotifications()
 			// If the user accepts, let's create a notification
 			if (permission === "granted")
 			{
-				hasPermisisons = true;
+				hasPermissions = true;
 			}
 		});
 	}
